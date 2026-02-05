@@ -1,0 +1,10 @@
+<!DOCTYPE
+        beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+        "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+    <bean id="hw" class="org.example.geeksforgeeks.core.beanslifecycle.HelloWorld"
+          init-method="init1" destroy-method="destroy"/>
+
+    <bean id="hw1" class="org.example.geeksforgeeks.core.beanslifecycle.HelloWorld1" />
+</beans>
