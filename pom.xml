@@ -18,6 +18,7 @@
         <module>spring-bean</module>
         <module>spring-context</module>
         <module>spring-spel</module>
+        <module>spring-jdbc</module>
     </modules>
     <build>
         <plugins>

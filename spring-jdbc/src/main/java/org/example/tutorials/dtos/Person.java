@@ -1,11 +1,25 @@
 package org.example.tutorials.dtos;
 
+
 public class Person {
+    private int id;
     private String name;
     private int age;
 
+    public Person( ) {
+
+    }
+
     public Person(String name) {
         this.name = name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -26,6 +40,6 @@ public class Person {
 
     @Override
     public String toString() {
-        return name + ": " + age;
+        return name + ": " + id;
     }
 }

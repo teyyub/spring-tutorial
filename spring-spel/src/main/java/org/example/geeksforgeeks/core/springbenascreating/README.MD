@@ -1,1 +1,0 @@
-https://www.geeksforgeeks.org/how-to-create-a-spring-bean-in-3-different-ways/?ref=lbp

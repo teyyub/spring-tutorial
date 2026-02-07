@@ -1,0 +1,33 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="org.h2.Driver" />
+        <property name="url" value="jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;INIT=CREATE TABLE IF NOT EXISTS person(id INT PRIMARY KEY, name VARCHAR(255))" />
+        <property name="username" value="sa" />
+        <property name="password" value="" />
+    </bean>
+
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+    <bean id="personRepoInMemory" class="org.example.tutorials.repository.PersonRepository">
+
+    </bean>
+
+    <bean id="personRepoH2" class="org.example.tutorials.repository.PersonRepositoryH2">
+        <property name="jdbcTemplate" ref="jdbcTemplate" />
+    </bean>
+
+    <bean id="personService" class="org.example.tutorials.service.PersonService">
+        <constructor-arg ref="personRepoH2" />
+    </bean>
+
+    <bean id="personController" class="org.example.tutorials.controller.PersonController">
+        <property name="service" ref="personService" />
+    </bean>
+
+</beans>
