@@ -14,11 +14,13 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <modules>
+        <module>spring-annotation</module>
         <module>spring-core</module>
         <module>spring-bean</module>
         <module>spring-context</module>
         <module>spring-spel</module>
         <module>spring-jdbc</module>
+        <module>spring-web</module>
     </modules>
     <build>
         <plugins>

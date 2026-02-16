@@ -1,0 +1,16 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="personRepo" class="org.example.tutorials.repository.PersonRepository" />
+
+    <bean id="personService" class="org.example.tutorials.service.PersonService">
+        <constructor-arg ref="personRepo" />
+    </bean>
+
+    <bean id="personController" class="org.example.tutorials.controller.PersonController">
+        <property name="service" ref="personService" />
+    </bean>
+
+</beans>

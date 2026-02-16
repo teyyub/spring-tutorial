@@ -1,0 +1,11 @@
+version: '3.9'
+
+services:
+  tomcat:
+    build: .
+    container_name: spring-ws-tomcat
+    ports:
+      - "8080:8080"
+#    volumes:
+#      - ./target/ROOT.war:/usr/local/tomcat/webapps/ROOT.war
+    restart: unless-stopped
